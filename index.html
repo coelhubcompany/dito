@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Frase do Dia</title>
+  <link rel="stylesheet" href="estilo.css" />
+  <script defer src="script.js"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>🧠 Frase do Dia</h1>
+      <div class="header-actions">
+        <button id="toggle-tema" aria-label="Alternar tema">🌙</button>
+        <a href="favoritos.html" class="favoritos-link" title="Ver favoritos">⭐ Meus Favoritos</a>
+      </div>
+    </header>
+
+    <main>
+      <div class="card">
+        <blockquote id="frase-texto">“Aguardando frase...”</blockquote>
+        <cite id="frase-autor">— Autor Desconhecido</cite>
+
+        <div class="botoes">
+          <button id="btn-curtir" title="Curtir">❤️</button>
+          <button id="btn-favoritar" title="Favoritar">⭐</button>
+          <button id="btn-copiar" title="Copiar">📋</button>
+          <button id="btn-compartilhar" title="Compartilhar">🔗</button>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Frase do Dia · Todos os direitos reservados</p>
+    </footer>
+  </div>
+</body>
+</html>
