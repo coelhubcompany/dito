@@ -1,0 +1,179 @@
+/* ==== BASE ==== */
+:root {
+  --bg-light: #f7f7f8;
+  --text-light: #1e1e1f;
+  --card-light: rgba(255, 255, 255, 0.6);
+
+  --bg-dark: #121212;
+  --text-dark: #f1f1f1;
+  --card-dark: rgba(255, 255, 255, 0.08);
+
+  --accent: #7c3aed;
+}
+
+html[data-theme="light"] {
+  --bg: var(--bg-light);
+  --text: var(--text-light);
+  --card: var(--card-light);
+}
+
+html[data-theme="dark"] {
+  --bg: var(--bg-dark);
+  --text: var(--text-dark);
+  --card: var(--card-dark);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* ==== CONTAINER ==== */
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 1rem;
+}
+
+/* ==== HEADER ==== */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1rem 0;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+#toggle-tema {
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: var(--text);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+#toggle-tema:hover {
+  transform: rotate(20deg);
+}
+
+.favoritos-link {
+  font-size: 0.95rem;
+  text-decoration: none;
+  color: var(--accent);
+  font-weight: 600;
+  border: 1px solid var(--accent);
+  padding: 6px 10px;
+  border-radius: 8px;
+  transition: background 0.2s ease;
+}
+
+.favoritos-link:hover {
+  background: var(--accent);
+  color: white;
+}
+
+/* ==== MAIN ==== */
+main {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+}
+
+.card {
+  background: var(--card);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-radius: 16px;
+  padding: 2rem;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  animation: fadeIn 0.5s ease-out;
+}
+
+blockquote {
+  font-size: 1.6rem;
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+cite {
+  font-size: 1rem;
+  color: var(--text);
+  opacity: 0.7;
+  display: block;
+  margin-bottom: 1.5rem;
+}
+
+/* ==== BOTOES ==== */
+.botoes {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+}
+
+.botoes button {
+  font-size: 1.4rem;
+  background: transparent;
+  border: none;
+  color: var(--text);
+  cursor: pointer;
+  transition: transform 0.2s, color 0.3s;
+}
+
+.botoes button:hover {
+  transform: scale(1.25);
+  color: var(--accent);
+}
+
+.botoes button.ativo {
+  color: var(--accent);
+}
+
+/* ==== FOOTER ==== */
+footer {
+  text-align: center;
+  font-size: 0.85rem;
+  padding: 1rem 0;
+  opacity: 0.6;
+}
+
+/* ==== ANIMAÇÃO ==== */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ==== RESPONSIVO ==== */
+@media (max-width: 600px) {
+  blockquote {
+    font-size: 1.3rem;
+  }
+
+  .botoes {
+    gap: 0.9rem;
+  }
+}
